@@ -1,0 +1,60 @@
+# include<stdio.h>
+int f=-1;
+void push(int n, int array[n])
+ {
+  if(f == (n-1))
+  {
+   printf("stack overflow");
+  }
+  else
+  {
+  int val;
+  f ++;
+  printf("enter the push val");
+  scanf("%d",&val);
+  array[f]= val;
+  }
+}
+void pop(int n, int array[n])
+{
+if(f == -1)
+ {
+ printf("stack underflow");
+ }
+else
+ {
+ printf("%d", array[f--]);
+ }
+}
+void display(int n, int array[n])
+{
+  printf("Displaying : \n");
+  for (int i=f ; i>=0; i--)
+            printf("%d  ",array[i]);
+        printf("\n");
+}
+void main()
+{
+    int n;
+    printf("Enter the length of the array \n");
+    scanf("%d",&n);
+    int array[n];
+    int choice;
+    int p=1;
+    while (p)
+    {
+    printf("1push, 2pop , 3display ");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+    case 1: push(n,array);
+    break;
+    case 2: pop(n,array);
+    break;
+    case 3: display(n,array);
+    break;
+    default: printf("Wrong input !!!\n");
+    break;
+    }
+    }
+}
