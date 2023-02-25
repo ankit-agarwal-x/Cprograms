@@ -1,0 +1,73 @@
+#include<stdio.h>
+void main()
+{
+    int n;
+    printf("Enter the number of rows");
+    scanf("%d",&n);
+    int k;
+
+    for (int i = 1; i <= (n*2)-3; i++)
+    {
+        if(i%2==0)
+         {
+             printf("0 ");
+         }
+         else
+         {
+             printf("1 ");
+         }
+    }
+    int r=n-1;
+    printf("\n");
+    for (int i = 1; i <= r; i++)
+    {
+
+     for (int s = 1; s <= r - i; s++)
+      {
+         if(s%2==0)
+    {
+             printf("0 ");
+         }
+         else
+        {
+             printf("1 ");
+         }
+
+      }
+      for (k=0; k != (2*i)-1 ; k=(k+1))
+      {
+
+        printf("  ");
+
+      }
+      for (int s = 1; s <= r - i; s++)
+      {
+         if(s%2==0)
+         {
+             printf("0 ");
+         }
+         else
+         {
+             printf("1 ");
+
+         }
+         printf("\n");
+    }
+
+for(i = 0; i < n; i++)
+    {
+        for(int j = 0; j < (2 * n); j++)
+        {
+            if(i + j <= n - 1)  // upper left triangle
+                printf("*");
+            else
+                printf(" ");
+            if((i + n) <= j)  // upper right triangle
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+        }
+        }
+}
