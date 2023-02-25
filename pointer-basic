@@ -1,0 +1,27 @@
+int *larger (int *, int *); /* prototype */
+int *smaller (int *, int *);
+void main ( )
+{
+int a = 10;
+int b = 20;
+int *p;
+p = larger(&a, &b);
+int *q = smaller (&a, &b);
+printf ("greater %d", *p);
+printf("\n");
+printf ("smaller %d", *q);
+}
+int *larger (int *x, int *y)
+{
+if (*x>*y)
+return (x);
+else
+return (y); /* address of b */
+}
+int *smaller (int *f, int *h)
+{
+if (*f<*h)
+return (f);
+else
+return (h); /* address of b */
+}
