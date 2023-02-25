@@ -1,0 +1,68 @@
+#include<stdio.h>
+int front=-1;
+void push(int n, int array[n])
+{
+    if (front==n-1)
+        printf("Overflow!!!\n");
+    else
+    {
+        front++;
+        printf("Pushhh!!! : ");
+        scanf("%d",&array[front]);
+    }
+}
+void pop(int n, int array[n])
+{
+    if (front ==-1)
+        printf("Underflow!!! : ");
+    else
+    {
+        printf("Poppping !!! : %d \n",array[front]);
+        front --;
+    }
+}
+void peek(int n, int array[n])
+{
+    printf("Peekkkh !!! : %d \n",array[front]);
+}
+void display(int n, int array[n])
+{
+    //if(front<=n)
+   // {
+        printf("Displaying : \n");
+        for (int i=front; i>=0; i--)
+            printf("%d  ",array[i]);
+        printf("\n");
+  //  }
+  //  else
+      //  front==-1;
+}
+int main()
+{
+    int n;
+    printf("Enter the length of the array \n");
+    scanf("%d",&n);
+    int array[n];
+    int choice;
+    int p=1;
+    while (p)
+    {
+        printf("Enter 1.Push \n2.Pop \n3.Peek \n4.Display \n5.End \nEnter your choice : ");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1: push(n,array);
+                    break;
+            case 2: pop(n,array);
+                    break;
+            case 3: peek(n,array);
+                    break;
+            case 4: display(n,array);
+                    break;
+            case 5: exit(0);
+            default: printf("Wrong input !!!\n");
+            
+        }
+}
+return 0;
+}
